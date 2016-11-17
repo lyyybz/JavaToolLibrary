@@ -1,4 +1,4 @@
-package com.lyyybz.exception;
+package com.lyyybz.common;
 /**
  * 
  * @author lyyybz

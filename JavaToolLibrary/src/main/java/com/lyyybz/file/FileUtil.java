@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.lyyybz.exception.MyException;
+import com.lyyybz.common.MyException;
 
 /**
  * 

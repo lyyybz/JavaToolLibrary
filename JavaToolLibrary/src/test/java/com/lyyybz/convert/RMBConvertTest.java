@@ -4,24 +4,43 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.lyyybz.common.LogUtil;
+
 public class RMBConvertTest
 {
 
 	@Test
 	public void test()
 	{
-		String str = RMBConvert.chinese("12.53");
+		String money = "12.53";
+		String str = RMBConvert.chinese(money);
 		assertEquals("壹拾贰元伍角叁分", str);
-		str = RMBConvert.chinese("12.0");
+		LogUtil.debug(money + "\t" + str);
+		
+		money = "12.0";
+		str = RMBConvert.chinese(money);
 		assertEquals("壹拾贰元整", str);
-		str = RMBConvert.chinese("12");
+		LogUtil.debug(money + "\t" + str);
+		
+		money = "12";
+		str = RMBConvert.chinese(money);
 		assertEquals("壹拾贰元整", str);
-		str = RMBConvert.chinese("0.12");
+		LogUtil.debug(money + "\t" + str);
+		
+		money = "0.12";
+		str = RMBConvert.chinese(money);
 		assertEquals("壹角贰分", str);
-		str = RMBConvert.chinese("0.0");
+		LogUtil.debug(money + "\t" + str);
+		
+		money = "0.0";
+		str = RMBConvert.chinese(money);
 		assertEquals("零元", str);
-		str = RMBConvert.chinese("0");
+		LogUtil.debug(money + "\t" + str);
+		
+		money = "0";
+		str = RMBConvert.chinese(money);
 		assertEquals("零元", str);
+		LogUtil.debug(money + "\t" + str);
 	}
 
 }
