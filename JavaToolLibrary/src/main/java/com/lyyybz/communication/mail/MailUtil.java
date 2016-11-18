@@ -6,7 +6,6 @@ import java.util.Properties;
 import javax.mail.Address;
 import javax.mail.Authenticator;
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -15,7 +14,7 @@ import javax.mail.internet.MimeMessage;
 
 import com.lyyybz.common.LogUtil;
 
-public class EmailUtil
+public class MailUtil
 {
 	private final String mailServerHost;
 	private final String mailServerPort;
@@ -24,7 +23,7 @@ public class EmailUtil
 	private final String userName;
 	private final String password;
 
-	public EmailUtil(Builder builder)
+	public MailUtil(Builder builder)
 	{
 		this.targetAddr = builder.targetAddr;
 		
@@ -136,9 +135,9 @@ public class EmailUtil
 			return this;
 		}
 		
-		public EmailUtil build()
+		public MailUtil build()
 		{
-			return new EmailUtil(this);
+			return new MailUtil(this);
 		}
 	}
 	
