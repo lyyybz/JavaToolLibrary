@@ -87,10 +87,4 @@ public class FileUtil
 		return result;
 	}
 
-	public static void main(String[] args) throws MyException
-	{
-//		System.out.println(batchDeleteFile("e:\\tmp", BatchDeleteMode.FILE, ""));
-		System.out.println(writeFile("e:\\tmp\\1.txt", "test", true));
-		
-	}
 }

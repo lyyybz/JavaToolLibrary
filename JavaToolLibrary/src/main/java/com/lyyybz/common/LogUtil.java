@@ -31,4 +31,9 @@ public class LogUtil
 	{
 		logger.warn(message);
 	}
+	
+	public static void exception(Exception e)
+	{
+		logger.error("Exception : ", e);
+	}
 }
