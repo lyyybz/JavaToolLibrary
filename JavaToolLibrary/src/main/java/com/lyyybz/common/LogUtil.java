@@ -34,6 +34,6 @@ public class LogUtil
 	
 	public static void exception(Exception e)
 	{
-		logger.error("Exception : ", e);
+		logger.error(e.getMessage(), e);
 	}
 }

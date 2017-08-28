@@ -1,8 +1,11 @@
 package com.lyyybz.file;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 
 import com.lyyybz.common.MyException;
 
@@ -13,6 +16,45 @@ import com.lyyybz.common.MyException;
  */
 public class FileUtil
 {
+	
+	public static void getFilePath()
+	{
+		URL url = FileUtil.class.getProtectionDomain().getCodeSource()
+				.getLocation();
+		String filePath = url.getPath();
+		if (filePath.endsWith(".jar"))
+		{
+			filePath = filePath.substring(0, filePath.lastIndexOf("/") + 1);
+		}
+		File file = new File(filePath);
+		filePath = file.getAbsolutePath();
+		System.out.println(filePath);
+	}
+	
+	public static String readFileContext(String filePath)
+    {
+        try
+        {
+            File file = new File(filePath);
+            if(!file.exists())
+            {
+                return null;
+            }
+            BufferedReader in = new BufferedReader(new FileReader(file));
+            String context = "";
+            String str;
+            while ((str = in.readLine()) != null)
+            {
+                context += str;
+            }
+            in.close();
+            return context;
+        }catch (Exception e)
+        {
+            return null;
+        }
+    }
+	
 	/**
 	 * write File, you can select append or not 
 	 */
